@@ -15,10 +15,20 @@ echo
 echo " o Installing prerequisites!"
 sudo apt-get install libxdamage1 libgtk-3-0 libasound2 libnss3 libxss1 libx11-xcb1 libxcb-dri3-0 libgbm1 libdrm2 libxshmfence1 libxmlsec1-openssl bzip2 -y
 echo
+echo " o Uninstalling old Acunetix!"
+sudo chmod 777 /home/acunetix/.acunetix 2>/dev/null
+sudo chown root:root /home/acunetix/.acunetix 2>/dev/null
+sudo rm -rf /home/acunetix/.acunetix 2>/dev/null
+echo
 echo " o Downloading Acunetix!"
+sudo rm ./acunetix*
+wget -nc https://91.92.246.92/acunetix_23.9.231020153_x64.sh --no-check-certificate
 echo
 echo " o Installing Acunetix!"
-wget https://91.92.246.92/acunetix_23.9.231020153_x64.sh --no-check-certificate && sudo bash ./acunetix* && sudo systemctl stop acunetix
+sudo bash ./acunetix*
+echo
+echo " o Stopping Acunetix!"
+sudo systemctl stop acunetix
 echo
 echo " o Doing Magic!"
 sudo cp ./wvsc /home/acunetix/.acunetix/v_231020153/scanner/wvsc
