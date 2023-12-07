@@ -16,9 +16,10 @@ echo " o Installing prerequisites!"
 sudo apt-get install libxdamage1 libgtk-3-0 libasound2 libnss3 libxss1 libx11-xcb1 libxcb-dri3-0 libgbm1 libdrm2 libxshmfence1 libxmlsec1-openssl bzip2 -y
 echo
 echo " o Uninstalling old Acunetix!"
-sudo chmod 777 /home/acunetix/.acunetix 2>/dev/null
-sudo chown root:root /home/acunetix/.acunetix 2>/dev/null
-sudo rm -rf /home/acunetix/.acunetix 2>/dev/null
+sudo userdel acunetix 2>/dev/null
+sudo chattr -i /home/acunetix/.acunetix/data/license/license_info.json 2>/dev/null
+sudo chattr -i /home/acunetix/.acunetix/data/license/wa_data.dat 2>/dev/null
+sudo rm -rf /home/acunetix 2>/dev/null
 echo
 echo " o Downloading Acunetix!"
 sudo rm ./acunetix*
