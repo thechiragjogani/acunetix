@@ -15,7 +15,7 @@ echo
 echo " o Downloading Acunetix!"
 echo
 echo " o Installing Acunetix!"
-wget https://91.92.246.92/acunetix_23.9.231020153_x64.sh && sudo bash ./acunetix* && sudo systemctl stop acunetix
+wget https://91.92.246.92/acunetix_23.9.231020153_x64.sh --no-check-certificate && sudo bash ./acunetix* && sudo systemctl stop acunetix
 echo
 echo " o Doing Magic!"
 sudo cp ./wvsc /home/acunetix/.acunetix/v_231020153/scanner/wvsc
