@@ -12,6 +12,9 @@ echo -e "192.178.49.174  telemetry.invicti.com." | sudo tee -a /etc/hosts
 echo -e "2607:f8b0:402a:80a::200e  telemetry.invicti.com" | sudo tee -a /etc/hosts
 echo -e "2607:f8b0:402a:80a::200e  telemetry.invicti.com." | sudo tee -a /etc/hosts
 echo
+echo " o Installing prerequisites!"
+sudo apt-get install libxdamage1 libgtk-3-0 libasound2 libnss3 libxss1 libx11-xcb1 libxcb-dri3-0 libgbm1 libdrm2 libxshmfence1 libxmlsec1-openssl bzip2 -y
+echo
 echo " o Downloading Acunetix!"
 echo
 echo " o Installing Acunetix!"
